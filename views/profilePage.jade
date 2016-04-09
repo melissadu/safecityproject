@@ -17,11 +17,17 @@ block content
                   {
                   document.getElementById("range").innerHTML=newValue;
                   }
+      p We will use your responses to determine the best route for you to take.
+      br
+      br
+      h3 Please:
+      ul
+        li  Avoid dark and heavily colored regions.
+        li  Call 911 immediately if you feel unsafe. 
 
-      
     .col-sm-6
-      h2 Live Map Tracking
-      p Click for suggested routes
+      h2 Real Time Feedback
+      p What's been going on around you
       <div class="profpage-map" id="map"></div>
       
     .col-sm-6
@@ -31,4 +37,5 @@ block content
 
   <script src="/map.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdzukMD9sS5C6lO5VhLr4qCljG8g-84eE&libraries=visualization&callback=initMap"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjJCEAe2UROdUj14H9mqg2lX9mwl6A22E&libraries=visualization"></script>
 
