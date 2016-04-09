@@ -6,10 +6,6 @@ block content
     h3 Hello There
   html
     body
-      ul
-        for user in users
-          li= user.email
-      br
       h3 How safe do you feel?
       #sliderbar(style='width:300px; height:100px;')
         input(type='range', min='0', max='10', value='5', onchange='showValue(this.value)')
@@ -23,18 +19,3 @@ block content
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjJCEAe2UROdUj14H9mqg2lX9mwl6A22E&libraries=visualization&callback=initMap"></script>
         <script src="/map.js"></script>
 
-
-=======
-    h1 Dashboard
-    p.lead Welcome, #{user.profile.name}
-    hr
-    .row
-      .col-sm-6
-        img(src='#{user.profile.picture}')
-      .col-sm-6
-        p How safe do you currently feel
-        div Insert slider here
-      .col-sm-6
-        p #{user.profile}
-      .col-sm-6
-        p.lead Here are a few resources to help you navigate your surroudings today.              246be06ad641bc738978e0af6c0f570346b42d5e
