@@ -34,6 +34,10 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
+
+
+
+
 /**
  * API keys and Passport configuration.
  */
@@ -102,6 +106,11 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
+// Profile routes
+app.get('/profile', userController.getProfile);
+
+
 
 /**
  * Primary app routes.

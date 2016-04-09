@@ -401,3 +401,9 @@ exports.postForgot = function(req, res, next) {
     res.redirect('/forgot');
   });
 };
+
+exports.getProfile = function(req, res) {
+  User.find(function(err, docs) {
+    res.render('profilePage', { users: docs });
+  });
+};
