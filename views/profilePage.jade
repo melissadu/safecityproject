@@ -2,6 +2,7 @@ extends layout
 
 block content
   .page-header
+    HEAD
     h3 Hello There
   html
     body
@@ -23,3 +24,17 @@ block content
         <script src="/map.js"></script>
 
 
+=======
+    h1 Dashboard
+    p.lead Welcome, #{user.profile.name}
+    hr
+    .row
+      .col-sm-6
+        img(src='#{user.profile.picture}')
+      .col-sm-6
+        p How safe do you currently feel
+        div Insert slider here
+      .col-sm-6
+        p #{user.profile}
+      .col-sm-6
+        p.lead Here are a few resources to help you navigate your surroudings today.              246be06ad641bc738978e0af6c0f570346b42d5e

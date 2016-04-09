@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
+var session = require('express-session');
 
 /**
  * GET /login
@@ -12,7 +13,7 @@ var User = require('../models/User');
 
 exports.getLogin = function(req, res) {
   if (req.user) {
-    return res.redirect('/');
+    return res.redirect('/profile');
   }
   res.render('account/login', {
     title: 'Login'
@@ -405,6 +406,6 @@ exports.postForgot = function(req, res, next) {
 
 exports.getProfile = function(req, res) {
   User.find(function(err, docs) {
-    res.render('profilePage', { users: docs });
+    res.render('profilePage', { user: req.user });
   });
 };
