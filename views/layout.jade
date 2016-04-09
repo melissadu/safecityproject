@@ -9,12 +9,14 @@ html
     title #{title} - The Safecity Project
     link(rel='shortcut icon', href='/favicon.png')
     link(rel='stylesheet', href='/css/main.css')
-
+    style(type='text/css').
+      html, body { height: 100%; margin: 50; padding: 50; }
+      #map { height: 215%; width: 225%; zoom: 1}
+    script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
     script(type='text/javascript').
       if (window.location.hash && window.location.hash == '#_=_') {
       window.location.hash = '';
       }
-
   body
     include partials/header
 
@@ -31,7 +33,7 @@ html
     <script type="text/javascript" src="/js/geoapi.js"></script>
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID
-    script.
+    script. 
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
