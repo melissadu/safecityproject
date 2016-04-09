@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
+var session = require('express-session');
 
 /**
  * GET /login
@@ -405,6 +406,6 @@ exports.postForgot = function(req, res, next) {
 
 exports.getProfile = function(req, res) {
   User.find(function(err, docs) {
-    res.render('profilePage', { users: docs });
+    res.render('profilePage', { user: req.user });
   });
 };
