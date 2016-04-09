@@ -2,8 +2,24 @@ extends layout
 
 block content
   .page-header
-    h3 My Profile
+    h3 Hello There
+  html
+    body
+      ul
+        for user in users
+          li= user.email
+      br
+      h3 How safe do you feel?
+      #sliderbar(style='width:300px; height:100px;')
+        input(type='range', min='0', max='10', value='5', onchange='showValue(this.value)')
+        span#range  5 
+        script(type='text/javascript').
+          function showValue(newValue)
+          {
+          document.getElementById("range").innerHTML=newValue;
+          }
+        <div id="map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjJCEAe2UROdUj14H9mqg2lX9mwl6A22E&libraries=visualization&callback=initMap"></script>
+        <script src="/map.js"></script>
 
-  ul
-    for user in users
-      li= user.email
+
