@@ -1,24 +1,33 @@
 extends layout
-block content
-  .page-header
-    HEAD
-    h2 Dashboard 
-  html
-    body
-      .row
-        .col-sm-6
-          h3 Welcome #{user.profile.name}
 
-        .col-sm-6
-          h3 How safe do you feel?
-            #sliderbar(style='width:300px; height:100px;')
-              input(type='range', min='0', max='10', value='5', onchange='showValue(this.value)')
-              span#range  5 
-              script(type='text/javascript').
-                function showValue(newValue)
-                {
-                document.getElementById("range").innerHTML=newValue;
-                }
-              <div id="map"></div>
-              <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjJCEAe2UROdUj14H9mqg2lX9mwl6A22E&libraries=visualization&callback=initMap"></script>
-              <script src="/map.js"></script>
+block content
+  h1 Dashboard
+  p.lead Welcome #{user.profile.name}
+  hr
+  .row
+    .col-sm-6
+      img(src='#{user.profile.picture}')
+      h2 Your current location is: 
+      p Move this slider as you walk around to give us an idea of how you feel.
+      #sliderbar(style='width:300px; height:100px;')
+                input(type='range', min='0', max='10', value='5', onchange='showValue(this.value)')
+                span#range  5 
+                script(type='text/javascript').
+                  function showValue(newValue)
+                  {
+                  document.getElementById("range").innerHTML=newValue;
+                  }
+
+      
+    .col-sm-6
+      h2 Live Map Tracking
+      p Click for suggested routes
+      <div class="profpage-map" id="map"></div>
+      
+    .col-sm-6
+      
+    .col-sm-6
+      
+
+  <script src="/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjJCEAe2UROdUj14H9mqg2lX9mwl6A22E&libraries=visualization&callback=initMap"></script>
