@@ -13,7 +13,7 @@ var session = require('express-session');
 
 exports.getLogin = function(req, res) {
   if (req.user) {
-    return res.redirect('/');
+    return res.redirect('/profile');
   }
   res.render('account/login', {
     title: 'Login'

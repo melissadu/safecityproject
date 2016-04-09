@@ -8,6 +8,10 @@ html
     title #{title} - The Safecity Project
     link(rel='shortcut icon', href='/favicon.png')
     link(rel='stylesheet', href='/css/main.css')
+    script(type='text/javascript').
+      if (window.location.hash && window.location.hash == '#_=_') {
+      window.location.hash = '';
+      }
   body
     include partials/header
 
