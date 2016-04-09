@@ -19,8 +19,6 @@ var sass = require('node-sass-middleware');
 var multer = require('multer');
 var upload = multer({ dest: path.join(__dirname, 'uploads') });
 
-var favicon = require('serve-favicon');
-var cookieParser = require('cookie-parser');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.

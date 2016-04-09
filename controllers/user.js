@@ -9,6 +9,7 @@ var User = require('../models/User');
  * GET /login
  * Login page.
  */
+
 exports.getLogin = function(req, res) {
   if (req.user) {
     return res.redirect('/');
